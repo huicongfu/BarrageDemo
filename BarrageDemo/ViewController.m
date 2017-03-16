@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "BullerView.h"
+#import "BulletManager.h"
 
 @interface ViewController ()
+
+@property (nonatomic, retain) BulletManager * manager;
 
 @end
 
@@ -16,9 +20,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.manager = [[BulletManager alloc] init];
+    
+    __weak typeof(self) weakSelf = self;
+    self.manager.generateViewBlock = ^(BullerView *view) {
+        [weakSelf addBulletView:view];
+    };
+    
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [btn setTitle:@"start" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(100, 100, 100, 40);
+    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
 
+- (void)clickBtn {
+    [self.manager start];
+}
+
+- (void)addBulletView:(BullerView *)view {
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    view.frame = CGRectMake(width, 300 + view.trajectory * 40, CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds));
+    [self.view addSubview:view];
+    
+    [view startAnimation];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

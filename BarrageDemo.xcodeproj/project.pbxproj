@@ -15,6 +15,8 @@
 		874AF2881E7374F800E91D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874AF2861E7374F800E91D65 /* LaunchScreen.storyboard */; };
 		874AF2931E7374F800E91D65 /* BarrageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 874AF2921E7374F800E91D65 /* BarrageDemoTests.m */; };
 		874AF29E1E7374F800E91D65 /* BarrageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 874AF29D1E7374F800E91D65 /* BarrageDemoUITests.m */; };
+		874AF2AD1E73754500E91D65 /* BullerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 874AF2AC1E73754500E91D65 /* BullerView.m */; };
+		874AF2B01E73757400E91D65 /* BulletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 874AF2AF1E73757400E91D65 /* BulletManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		874AF2991E7374F800E91D65 /* BarrageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarrageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		874AF29D1E7374F800E91D65 /* BarrageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrageDemoUITests.m; sourceTree = "<group>"; };
 		874AF29F1E7374F800E91D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		874AF2AB1E73754500E91D65 /* BullerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BullerView.h; sourceTree = "<group>"; };
+		874AF2AC1E73754500E91D65 /* BullerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BullerView.m; sourceTree = "<group>"; };
+		874AF2AE1E73757400E91D65 /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletManager.h; sourceTree = "<group>"; };
+		874AF2AF1E73757400E91D65 /* BulletManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,10 @@
 				874AF2861E7374F800E91D65 /* LaunchScreen.storyboard */,
 				874AF2891E7374F800E91D65 /* Info.plist */,
 				874AF2781E7374F800E91D65 /* Supporting Files */,
+				874AF2AB1E73754500E91D65 /* BullerView.h */,
+				874AF2AC1E73754500E91D65 /* BullerView.m */,
+				874AF2AE1E73757400E91D65 /* BulletManager.h */,
+				874AF2AF1E73757400E91D65 /* BulletManager.m */,
 			);
 			path = BarrageDemo;
 			sourceTree = "<group>";
@@ -273,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874AF2AD1E73754500E91D65 /* BullerView.m in Sources */,
 				874AF2801E7374F800E91D65 /* ViewController.m in Sources */,
 				874AF27D1E7374F800E91D65 /* AppDelegate.m in Sources */,
 				874AF27A1E7374F800E91D65 /* main.m in Sources */,
+				874AF2B01E73757400E91D65 /* BulletManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
