@@ -52,7 +52,7 @@
 
 - (void)addBulletView:(BullerView *)view {
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    view.frame = CGRectMake(width, 300 + view.trajectory * 40, CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds));
+    view.frame = CGRectMake(width, 300 + view.trajectory * 55, CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds));
     [self.view addSubview:view];
     
     [view startAnimation];

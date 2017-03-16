@@ -9,10 +9,12 @@
 #import "BullerView.h"
 
 #define Padding 10
+#define PhotoHeight 30
 
 @interface BullerView ()
 
 @property (nonatomic, retain) UILabel * lbComment;
+@property (nonatomic, retain) UIImageView * photoHead;
 
 @end
 
@@ -23,14 +25,21 @@
 - (instancetype)initWithComment:(NSString *)comment {
     if (self = [super init]) {
         self.backgroundColor = [UIColor redColor];
+        self.layer.cornerRadius = 15;
+        
         //计算弹幕的实际宽度
         NSDictionary * attr = @{NSFontAttributeName : [UIFont systemFontOfSize:14.0]};
         CGFloat width = [comment sizeWithAttributes:attr].width;
         
-        self.bounds = CGRectMake(0, 0, width + 2 * Padding, 30);
+        self.bounds = CGRectMake(0, 0, width + 2 * Padding + PhotoHeight, 30);
         self.lbComment.text = comment;
-        self.lbComment.frame = CGRectMake(Padding, 0, width, 30);
+        self.lbComment.frame = CGRectMake(Padding + PhotoHeight, 0, width, 30);
         
+        self.photoHead.frame = CGRectMake(-Padding, -Padding, PhotoHeight + Padding, PhotoHeight + Padding);
+        self.photoHead.layer.cornerRadius = (PhotoHeight + Padding)/2;
+        self.photoHead.layer.borderColor = [UIColor orangeColor].CGColor;
+        self.photoHead.layer.borderWidth = 1;
+        self.photoHead.image = [UIImage imageNamed:@"timg.jpg"];
     }
     
     return self;
@@ -93,6 +102,16 @@
         [self addSubview:_lbComment];
     }
     return _lbComment;
+}
+
+- (UIImageView *)photoHead {
+    if (_photoHead == nil) {
+        _photoHead = [UIImageView new];
+        _photoHead.clipsToBounds = YES;
+        _photoHead.contentMode = UIViewContentModeScaleAspectFill;
+        [self addSubview:_photoHead];
+    }
+    return _photoHead;
 }
 
 @end
